@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.auribox.model.Message" id="message" scope="singleton" destroy-method="closeMethodEstela"> 
+	  <property name="header" value="Spring Header"></property>
+	  <property name="payload" value="Spring PayLoad" ></property>
+		
+	</bean>
+	
+	<bean class="com.auribox.model.Message" id="message2" scope="singleton" init-method="initMethodEstela"> 
+	  <property name="header" value="Spring Header_2"></property>
+	  <property name="payload" value="Spring PayLoad_2" ></property>
+		
+	</bean>
+	
+	<bean class="com.auribox.model.Message" id="message3" init-method="initMethodEstela"> 
+	  <constructor-arg name="header" value="Header by Constructor"></constructor-arg>
+		
+	</bean>
+
+</beans>
